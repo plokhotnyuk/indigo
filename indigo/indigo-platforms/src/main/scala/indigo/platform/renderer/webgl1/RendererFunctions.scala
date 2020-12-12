@@ -79,8 +79,8 @@ object RendererFunctions {
       rotationAlphaFlipLocation,
       displayObject.rotation.toDouble,
       displayObject.effects.alpha.toDouble,
-      displayObject.effects.flipHorizontal.toDouble,
-      displayObject.effects.flipVertical.toDouble
+      displayObject.flipHorizontal.toDouble,
+      displayObject.flipVertical.toDouble
     )
 
     gl.uniform4f(
