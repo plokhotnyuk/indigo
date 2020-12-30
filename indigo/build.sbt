@@ -35,6 +35,25 @@ lazy val publishSettings = {
 
 // Testing
 
+lazy val tweening =
+  project
+    .enablePlugins(ScalaJSPlugin)
+    .enablePlugins(SbtIndigo)
+    .settings(commonSettings: _*)
+    .settings(
+      name := "tweening",
+      showCursor := true,
+      title := "Tweening",
+      gameAssetsDirectory := "assets"
+    )
+    .settings(
+      publish := {},
+      publishLocal := {}
+    )
+    .dependsOn(indigo)
+    .dependsOn(indigoExtras)
+    .dependsOn(indigoJsonCirce)
+
 lazy val sandbox =
   project
     .enablePlugins(ScalaJSPlugin)
@@ -208,7 +227,8 @@ lazy val indigoProject =
       indigo,
       indigoFacades,
       sandbox,
-      perf
+      perf,
+      tweening
     )
 
 lazy val code =
